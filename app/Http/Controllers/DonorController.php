@@ -55,7 +55,7 @@ class DonorController extends Controller
  		$donor->logo_id = 1; // needs to be changed
  		$donor->sector_id = 1; // needs ro be changed
  		$donor->district_id = 1; // needs to be changed 
- 		$donor->tags = "";
+ 		$donor->tags = "";// needs to be changed 
 
  		$donor->save();
 
