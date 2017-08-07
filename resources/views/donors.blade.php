@@ -24,7 +24,7 @@
 	    </tr>
 	  </thead>
 	  <tbody>
-	    @foreach($donors as $donor):
+	    @foreach($donors as $donor)
 		   	<tr>
 		      <td>{{ $donor->name }}</td>
 		      <td>{{ $donor->address }}</td>
