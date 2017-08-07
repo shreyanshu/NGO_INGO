@@ -19,6 +19,10 @@ Route::get('/projects', 'ProjectController@index');
 
 Route::get('/projects/delete/{project}', 'ProjectController@destroy');
 
+Route::post('/project/update/{project}', 'ProjectController@update');
+
+Route::post('/project/create', 'ProjectController@store');
+
 Route::get('/donors', 'DonorController@index');
 
 Route::get('/donors/delete/{donor}', 'DonorController@destroy');
