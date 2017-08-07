@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<button type = "button" class="btn btn-danger" data-toggle="modal" data-target="#newModal">
+	<button type = "button" class="btn btn-danger" data-toggle="modal" data-target="#newModal" data-act="new">
 		<img src="/images/glyphicons-191-plus-sign.png">   NEW</button>
 
 	<a href = "/" class="btn btn-primary offset-sm-9">
@@ -31,8 +31,8 @@
 			      <td>{{$project->budget}}</td>
 			      <td>{{$project->organization->name}}</td>
 			      <td>{{$project->created_at}}</td>
-			      <td><img src="/images/glyphicons-52-eye-open.png" data-toggle="modal" data-target="#newModal"></td>
-			      <td><img src="/images/glyphicons-31-pencil.png" data-toggle="modal" data-target="#newModal"></td>
+			      <td><img src="/images/glyphicons-52-eye-open.png" data-toggle="modal" data-target="#newModal" data-whatever="{{ $project }}" data-act="view"></td>
+			      <td><img src="/images/glyphicons-31-pencil.png" data-toggle="modal" data-target="#newModal" data-whatever="{{ $project  }}" data-act="edit"></td>
 			      <td><a href="/projects/delete/{{ $project->id }}"><img src="/images/glyphicons-193-remove-sign.png"></a></td>
 			    </tr>
 		    @endforeach 
@@ -66,7 +66,7 @@
 							<div class = "form-group">
 								<label for = "contact" class = "control-label col-sm-1">Budget: </label>
 								<div class = "col-sm-12">
-								   <input type = "number" class = "form-control" name = "contact" placeholder = "Enter budget in NPR" required>
+								   <input type = "number" class = "form-control" name = "budget" placeholder = "Enter budget in NPR" required>
 								</div>
 							</div>
 
@@ -110,11 +110,9 @@
 				var modal = $(this)
 				var data = button.data('whatever')
 				modal.find('.modal-body input[name="name"]').val(data['name'])
-				modal.find('.modal-body input[name="address"]').val(data['address'])
-				modal.find('.modal-body input[name="phone"]').val(data['ph_number'])
-				modal.find('.modal-body input[name="email"]').val(data['email'])
+				modal.find('.modal-body input[name="duration"]').val(data['duration'])
+				modal.find('.modal-body input[name="budget"]').val(data['bugdet'])
 				modal.find('.modal-body input[name="website"]').val(data['website'])
-				modal.find('.modal-body input[name="estDate"]').val(data['estdate'])
 				modal.find('.modal-body textarea[name="description"]').val(data['description'])
 				if(button.data('act') == "view")
 				{

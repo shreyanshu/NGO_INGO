@@ -1,8 +1,6 @@
 @extends('layouts.layout')
 
 @section('content')
-
-	
 	<button type = "button" class="btn btn-danger" data-toggle="modal" data-target="#newModal">
 		<img src="/images/glyphicons-191-plus-sign.png">   NEW</button>
 
